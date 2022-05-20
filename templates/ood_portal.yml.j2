@@ -186,10 +186,12 @@ pun_stage_cmd: "{{ pun_stage_cmd }}"
 #auth:
 #  - 'AuthType openid-connect'
 #  - 'Require valid-user'
+{% if dex_settings is not defined %}
 auth:
 {% for auth in httpd_auth  %}
 - '{{ auth }}'
 {% endfor %}
+{% endif %}
 
 # Redirect user to the following URI when accessing root URI
 # Example:
