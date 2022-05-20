@@ -96,3 +96,10 @@
     name: "{{ apache_service_name }}"
     state: started
     enabled: "{{ apache_service_enabled }}"
+
+- name: Enable and start ondemand dex service
+  systemd:
+    name: "{{ ondemand_dex_service_name }}"
+    state: started
+    enabled: True
+  when: install_ondemand_dex | default(False) | bool

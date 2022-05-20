@@ -27,3 +27,4 @@ disable_gpg_check_rpm_repo: true
 # flip this flag if you want to install the ondemand-dex RPM
 install_ondemand_dex: false
 ondemand_dex_package: ondemand-dex
+ondemand_dex_service_name: "ondemand-dex"
